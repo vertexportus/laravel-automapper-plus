@@ -1,0 +1,26 @@
+{
+    "name": "vertexportus/laravel-automapper-plus",
+    "description": "Laravel wrapper for AutoMapper+ by Mark Gerarts",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "mark-gerarts/auto-mapper-plus": "^1.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AutoMapper\\Laravel\\": "src/"
+        },
+        "files": []
+    },
+    "authors": [
+        {
+            "name": "Daniel Alves",
+            "email": "daniel.alves@portus.tech"
+        }
+    ],
+    "extra": {
+        "laravel": {
+        }
+    }
+}
