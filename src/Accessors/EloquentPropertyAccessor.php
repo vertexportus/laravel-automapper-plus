@@ -64,6 +64,11 @@ class EloquentPropertyAccessor extends BasePropertyAccessor
 			return;
 		}
 
+		if (method_exists($object, 'getFillable') && in_array($propertyName, $object->getFillable())) {
+			$object->{$propertyName} = $value;
+			return;
+		}
+
 		parent::setProperty($object, $propertyName, $value);
 	}
 
@@ -74,6 +79,10 @@ class EloquentPropertyAccessor extends BasePropertyAccessor
 	{
 		if (method_exists($object, 'getColumns')) {
 			return $object->getColumns();
+		}
+
+		if (method_exists($object, 'getFillable')) {
+			return $object->getFillable();
 		}
 
 		return parent::getPropertyNames($object);
