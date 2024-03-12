@@ -9,6 +9,7 @@ use VertexPortus\AutoMapper\Contracts\AutoMapperServiceContract;
 /**
  * @method static registerMapping(string $source, string $dest): MappingInterface
  * @method static map(mixed $source, string $dest, array $context): mixed
+ * @method static mapToObject(mixed $source, object $dest, array $context): mixed
  * @method static mapMultiple(array $source, string $dest, array $context): mixed
  */
 class AutoMapper extends Facade
