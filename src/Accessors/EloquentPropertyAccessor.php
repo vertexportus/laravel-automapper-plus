@@ -11,18 +11,16 @@ class EloquentPropertyAccessor extends BasePropertyAccessor
 	 */
 	public function hasProperty($object, string $propertyName): bool
 	{
-		if (method_exists($object, 'getAttribute')) {
-			/** @var \Illuminate\Database\Eloquent\Model $object
-			 * @noinspection PhpFullyQualifiedNameUsageInspection
-			 */
-			return array_key_exists($propertyName, $object->getAttributes());
-		}
+        if (method_exists($object, 'getAttribute')) {
+            /**
+             * @var \Illuminate\Database\Eloquent\Model $object
+             */
+            return array_key_exists($propertyName, $object->getAttributes())
+                || property_exists($object, $propertyName)
+                || method_exists($object, $propertyName);
+        }
 
-		if (property_exists($object, $propertyName)) {
-			return true;
-		}
-
-		return false;
+        return false;
 	}
 
 	/**
@@ -42,10 +40,11 @@ class EloquentPropertyAccessor extends BasePropertyAccessor
 			return call_user_func([$object, $isGetter]);
 		}
 
-		if (method_exists($object, 'getAttributeValue')) {
-			/** @var \Illuminate\Database\Eloquent\Model $object
-			 * @noinspection PhpFullyQualifiedNameUsageInspection
-			 */
+		if (method_exists($object, 'getAttributeValue')
+            && array_key_exists($propertyName, $object->getAttributes())) {
+            /**
+             * @var \Illuminate\Database\Eloquent\Model $object
+             */
 			return $object->getAttributeValue($propertyName);
 		}
 
