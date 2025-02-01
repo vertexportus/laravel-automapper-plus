@@ -7,9 +7,9 @@ use AutoMapperPlus\Configuration\MappingInterface;
 
 use AutoMapperPlus\Configuration\AutoMapperConfig;
 use VertexPortus\AutoMapper\Accessors\EloquentPropertyAccessor;
-use VertexPortus\AutoMapper\Contracts\AutoMapperServiceContract;
+use VertexPortus\AutoMapper\Contracts\AutoMapperService;
 
-class AutoMapperPlusService extends AutoMapper implements AutoMapperServiceContract
+class AutoMapperPlusServiceImpl extends AutoMapper implements AutoMapperService
 {
 	/**
 	 */

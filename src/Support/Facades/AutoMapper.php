@@ -4,7 +4,7 @@ namespace VertexPortus\AutoMapper\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-use VertexPortus\AutoMapper\Contracts\AutoMapperServiceContract;
+use VertexPortus\AutoMapper\Contracts\AutoMapperService;
 
 /**
  * @method static registerMapping(string $source, string $dest): MappingInterface
@@ -21,6 +21,6 @@ class AutoMapper extends Facade
 	 */
 	protected static function getFacadeAccessor(): string
 	{
-		return AutoMapperServiceContract::class;
+		return AutoMapperService::class;
 	}
 }

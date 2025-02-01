@@ -3,8 +3,8 @@
 namespace VertexPortus\AutoMapper\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use VertexPortus\AutoMapper\Services\AutoMapperPlusService;
-use VertexPortus\AutoMapper\Contracts\AutoMapperServiceContract;
+use VertexPortus\AutoMapper\Services\AutoMapperPlusServiceImpl;
+use VertexPortus\AutoMapper\Contracts\AutoMapperService;
 
 class AutoMapperServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,7 @@ class AutoMapperServiceProvider extends ServiceProvider
 	 */
 	public function register(): void
 	{
-		$this->app->singleton(AutoMapperServiceContract::class, AutoMapperPlusService::class);
+		$this->app->singleton(AutoMapperService::class, AutoMapperPlusServiceImpl::class);
 	}
 
 	/**

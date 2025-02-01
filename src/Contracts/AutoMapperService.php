@@ -6,7 +6,7 @@ use AutoMapperPlus\AutoMapperInterface;
 use AutoMapperPlus\Configuration\MappingInterface;
 use AutoMapperPlus\Exception\UnregisteredMappingException;
 
-interface AutoMapperServiceContract extends AutoMapperInterface
+interface AutoMapperService extends AutoMapperInterface
 {
 	/**
 	 * Registers a mapping from $source class to $dest class
