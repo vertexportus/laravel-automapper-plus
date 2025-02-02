@@ -12,12 +12,12 @@ class LaravelMapperConfig implements LaravelMapperConfigInterface
     /**
      * @var LaravelMappingInterface[]
      */
-    private $mappings = [];
+    private array $mappings = [];
 
     /**
      * @var Options
      */
-    private $options;
+    private Options $options;
 
     /**
      * AutoMapperConfig constructor.

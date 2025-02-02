@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Collection;
-use AutoMapperPlus\Configuration\MappingInterface;
 use VertexPortus\AutoMapper\Support\Facades\AutoMapper;
+use VertexPortus\AutoMapper\Contracts\LaravelMappingInterface;
 
 if (!function_exists('auto_map')) {
 	/**
@@ -35,14 +35,14 @@ if (!function_exists('auto_map_multiple')) {
 
 
 if (!function_exists('auto_map_register')) {
-	/**
-	 * Registers a mapping from $source class to $dest class
-	 *
-	 * @param string $source
-	 * @param string $dest
-	 * @return MappingInterface
-	 */
-	function auto_map_register(string $source, string $dest): MappingInterface {
+    /**
+     * Registers a mapping from $source class to $dest class
+     *
+     * @param string $source
+     * @param string $dest
+     * @return LaravelMappingInterface
+     */
+	function auto_map_register(string $source, string $dest): LaravelMappingInterface {
 		return AutoMapper::registerMapping($source, $dest);
 	}
 }

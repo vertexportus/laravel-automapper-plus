@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpRedundantMethodOverrideInspection */
 
 namespace VertexPortus\AutoMapper\Configuration;
 
@@ -69,6 +70,7 @@ class LaravelMapping extends Mapping implements LaravelMappingInterface
                 : $destinationNamingConvention
         );
     }
+
     public function copyFromMapping(AutoMapperPlusMappingInterface $mapping): LaravelMappingInterface
     {
         return parent::copyFromMapping($mapping);

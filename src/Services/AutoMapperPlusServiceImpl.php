@@ -3,6 +3,7 @@
 namespace VertexPortus\AutoMapper\Services;
 
 use AutoMapperPlus\AutoMapper;
+use AutoMapperPlus\Configuration\MappingInterface;
 use VertexPortus\AutoMapper\Configuration\LaravelMapperConfig;
 use VertexPortus\AutoMapper\Accessors\EloquentPropertyAccessor;
 use VertexPortus\AutoMapper\Contracts\AutoMapperService;
@@ -30,17 +31,18 @@ class AutoMapperPlusServiceImpl extends AutoMapper implements AutoMapperService
 
 	/**
 	 * @inheritDoc
-	 */
+     * @noinspection PhpIncompatibleReturnTypeInspection
+     */
 	public function getMappingFor(string $sourceClass, string $destinationClass): LaravelMappingInterface
 	{
-		return $this
-			->getMapping($sourceClass, $destinationClass);
+		return $this->getMapping($sourceClass, $destinationClass);
 	}
 
     /**
      * @inheritDoc
+     * @noinspection PhpIncompatibleReturnTypeInspection
      */
-    function getConfiguration(): LaravelMapperConfigInterface
+    public function getConfiguration(): LaravelMapperConfigInterface
     {
         return parent::getConfiguration();
     }

@@ -2,6 +2,7 @@
 
 namespace VertexPortus\AutoMapper\Contracts;
 
+use VertexPortus\AutoMapper\Enums\NamingConvention;
 use AutoMapperPlus\NameResolver\NameResolverInterface;
 use AutoMapperPlus\MappingOperation\MappingOperationInterface;
 use AutoMapperPlus\NameConverter\NamingConvention\NamingConventionInterface;
@@ -20,8 +21,8 @@ interface LaravelMappingInterface extends AutoMapperPlusMappingInterface
     public function skipConstructor(): LaravelMappingInterface;
     public function dontSkipConstructor(): LaravelMappingInterface;
     public function withNamingConventions(
-        NamingConventionInterface $sourceNamingConvention,
-        NamingConventionInterface $destinationNamingConvention
+        NamingConventionInterface|NamingConvention $sourceNamingConvention,
+        NamingConventionInterface|NamingConvention $destinationNamingConvention
     ): LaravelMappingInterface;
     public function withDefaultOperation(MappingOperationInterface $mappingOperation): LaravelMappingInterface;
     public function withNameResolver(NameResolverInterface $nameResolver): LaravelMappingInterface;
